@@ -1,18 +1,27 @@
 package Code;
 
 import java.util.Date;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Customer")
 public class Customer {
-
 	
+	@Id
+	@Column(name="customer_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int customer_id;
 	
+	@Column(name="first_name")
 	private String first_name;
 	
+	@Column(name="last_name")
 	private String last_name;
 	
+	@Column(name="Status")
 	private Boolean active;
 	
+	@Column(name="creation_date")
 	private Date creation_date;
 	
 	public Customer() {}

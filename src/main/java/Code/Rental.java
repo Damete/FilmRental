@@ -14,6 +14,7 @@ public class Rental {
 		
 		//Foreign KEY!
 		@ManyToOne(fetch = FetchType.LAZY)
+		@JoinColumn(name="customer_id")
 		private int customer_id;
 		
 		@Column(name="rental_date")

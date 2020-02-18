@@ -1,27 +1,42 @@
 package Code;
 
 import java.util.Date;
+import javax.persistence.*;
 
+@Entity
+@Table(name="Film")
 public class Film {
 	
+	@Id
+	@Column(name="film_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int film_id;
 	
+	@Column(name="title")
 	private String title;
 	
+	@Column(name="description")
 	private String description;
 	
+	@Column(name="release_year")
 	private Date release_year;
 	
+	@Column(name="language")
 	private String language;
 	
+	@Column(name="rental_duration")
 	private Date rental_duration;
 	
+	@Column(name="rental_date")
 	private int rental_rate;
 	
+	@Column(name="length")
 	private Double length;
 	
+	@Column(name="replacement_cost")
 	private Double replacement_cost;
 	
+	@Column(name="rating")
 	private Double rating;
 	
 	public Film() {}
