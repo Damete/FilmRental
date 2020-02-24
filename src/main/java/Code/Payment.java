@@ -2,14 +2,31 @@ package Code;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Payment")
 public class Payment {
 	
+	@Id
+	@Column(name="payment_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int payment_id;
 	
+	@Id
+	@Column(name="rental_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int rental_id;
 	
+	@Column(name="amount")
 	private Double amount;
 	
+	@Column(name="payment_date")
 	private Date payment_date;
 	
 	public Payment() {}
