@@ -1,11 +1,20 @@
 package Code;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Actor")
 public class Actor {
 
+	@Id
+	@Column(name="id_actor")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_actor;
 	
+	@Column(name="first_name")
 	private String first_name;
 	
+	@Column(name="last_name")
 	private String last_name;
 	
 	public Actor() {}
