@@ -1,6 +1,9 @@
 package Code;
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -307,23 +310,53 @@ public class Main {
 	}
 
 	private static void createMovie() {
-		// TODO Auto-generated method stub
+		Film f = new Film();
+		Scanner sc = new Scanner(System.in);
 		
 	}
 
 	private static void createCategory() {
-		// TODO Auto-generated method stub
+		Category c = new Category();
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("Introduzca el nombre de la categoria");
+		String name = sc.nextLine();
+		c.setName(name);
+		em.persist(c);
 	}
 
 	private static void createActor() {
-		// TODO Auto-generated method stub
+		Actor a = new Actor();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Introduzca el nombre del Actor");
+		String name = sc.nextLine();
+		a.setFirst_name(name);
+		
+		System.out.println("Introduzca el apellido del actor");
+		String apellido = sc.nextLine();
+		a.setLast_name(apellido);
+		em.persist(a);
 		
 	}
 
 	private static void createCustomer() {
-		// TODO Auto-generated method stub
+		sc = new Scanner(System.in);
 		
+		System.out.println("Introduzca el nombre del cliente");
+		String name = sc.nextLine();
+		Customer c = new Customer();
+		System.out.println("Introduzca el apellido del cliente");
+		String last_name = sc.nextLine();	
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");		 
+		LocalDate today = LocalDate.now();		 
+		String formated = formatter.format(today);
+		
+		c.setFirst_name(name);
+		c.setLast_name(last_name);
+		c.setActive(true);
+		c.setCreation_date(formated);
+		em.persist(c);
 	}
 
 	public static void end() {

@@ -1,6 +1,5 @@
 package Code;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -22,11 +21,11 @@ public class Customer {
 	private Boolean active;
 	
 	@Column(name="creation_date")
-	private Date creation_date;
+	private String creation_date;
 	
 	public Customer() {}
 
-	public Customer(int customer_id, String first_name, String last_name, Boolean active, Date creation_date) {
+	public Customer(int customer_id, String first_name, String last_name, Boolean active, String creation_date) {
 		this.customer_id = customer_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -66,11 +65,11 @@ public class Customer {
 		this.active = active;
 	}
 
-	public Date getCreation_date() {
+	public String getCreation_date() {
 		return creation_date;
 	}
 
-	public void setCreation_date(Date creation_date) {
+	public void setCreation_date(String creation_date) {
 		this.creation_date = creation_date;
 	}
 }
