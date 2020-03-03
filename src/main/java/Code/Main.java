@@ -1,15 +1,13 @@
 package Code;
 
 import javax.persistence.*;
-
 import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
-
 import net.bytebuddy.matcher.FailSafeMatcher;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -215,28 +213,70 @@ public class Main {
 		}	
 	}
 	
-	private static void listLastSeenActors() {
-		
+	private static void listLastSeenActors() {  // Igual que en la anterior
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Object> lista = query.getResultList();
+
+		for(Object algo : lista){
+			System.out.println(algo);
+		}
 	}
 
-	private static void listByDate() {
-		
+	private static void listByDate() { // Igual que en la anterior
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Object> lista = query.getResultList();
+
+		for(Object byDate : lista){
+			System.out.println(byDate);
+		}
 	}
 
-	private static void showIncome() {
-		
+	private static void showIncome() { // Igual que en la anterior
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Object> lista = query.getResultList();
+
+		for(Object income: lista){
+			System.out.println(income);
+		}
 	}
 
-	private static void listByCategory() {
-		
+	private static void listByCategory() { // Igual que en la anterior
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Category> categoryList = query.getResultList();
+
+		for(Category c : categoryList){
+			System.out.println(c);
+		}
 	}
 
-	private static void listByActor() {
-		
+	private static void listByActor() { // Igual que la anterior
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Actor> actorList = query.getResultList();
+
+		for(Actor a : actorList){
+			System.out.println(a);
+		}
 	}
 
-	private static void listByClient() {
-		
+	private static void listByClient() { // Solo los saca por pantalla, hacer algo más (no se el que XD) y poner la query que sin ella poca cosa saldrá
+		String jpql = "";
+		Query query = em.createQuery(jpql);
+
+		List<Customer> customerList = query.getResultList();
+
+		for(Customer c : customerList){
+			System.out.println(c);
+		}
 	}
 
 	private static void deletePayment() {
