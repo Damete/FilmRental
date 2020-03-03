@@ -19,13 +19,13 @@ public class Film {
 	private String description;
 	
 	@Column(name="release_year")
-	private Date release_year;
+	private int release_year;
 	
 	@Column(name="language")
 	private String language;
 	
 	@Column(name="rental_duration")
-	private Date rental_duration;
+	private int rental_duration;
 	
 	@Column(name="rental_date")
 	private int rental_rate;
@@ -41,7 +41,7 @@ public class Film {
 	
 	public Film() {}
 
-	public Film(int film_id, String title, String description, Date release_year, String language, Date rental_duration,
+	public Film(int film_id, String title, String description, int release_year, String language, int rental_duration,
 			int rental_rate, Double length, Double replacement_cost, Double rating) {
 		this.film_id = film_id;
 		this.title = title;
@@ -79,11 +79,11 @@ public class Film {
 		this.description = description;
 	}
 
-	public Date getRelease_year() {
+	public int getRelease_year() {
 		return release_year;
 	}
 
-	public void setRelease_year(Date release_year) {
+	public void setRelease_year(int release_year) {
 		this.release_year = release_year;
 	}
 
@@ -95,11 +95,11 @@ public class Film {
 		this.language = language;
 	}
 
-	public Date getRental_duration() {
+	public int getRental_duration() {
 		return rental_duration;
 	}
 
-	public void setRental_duration(Date rental_duration) {
+	public void setRental_duration(int rental_duration) {
 		this.rental_duration = rental_duration;
 	}
 

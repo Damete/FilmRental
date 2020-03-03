@@ -18,14 +18,14 @@ public class Rental {
 		private int customer_id;
 		
 		@Column(name="rental_date")
-		private Date rental_date;
+		private String rental_date;
 		
 		@Column(name="return_date")
-		private Date return_date;
+		private String return_date;
 		
 		public Rental() {}
 
-		public Rental(int rental_id, int customer_id, Date rental_date, Date return_date) {
+		public Rental(int rental_id, int customer_id, String rental_date, String return_date) {
 			this.rental_id = rental_id;
 			this.customer_id = customer_id;
 			this.rental_date = rental_date;
@@ -48,19 +48,19 @@ public class Rental {
 			this.customer_id = customer_id;
 		}
 
-		public Date getRental_date() {
+		public String getRental_date() {
 			return rental_date;
 		}
 
-		public void setRental_date(Date rental_date) {
+		public void setRental_date(String rental_date) {
 			this.rental_date = rental_date;
 		}
 
-		public Date getReturn_date() {
+		public String getReturn_date() {
 			return return_date;
 		}
 
-		public void setReturn_date(Date return_date) {
+		public void setReturn_date(String return_date) {
 			this.return_date = return_date;
 		}
 		

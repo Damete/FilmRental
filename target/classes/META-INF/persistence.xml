@@ -6,10 +6,12 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 version="2.1">
     
   <persistence-unit name="FilmRental">
+  <class>FilmRental1.Actor</class>
   <class>FilmRental1.Category</class>
-  <class>FilmRental1.Rental</class>
   <class>FilmRental1.Customer</class>
   <class>FilmRental1.Film</class>
+  <class>FilmRental1.Payment</class>
+  <class>FilmRental1.Rental</class>
 	  <properties>
 	  	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/FilmRental"/>
 	  	<property name="javax.persistence.jdbc.user" value="Usuario"/>
